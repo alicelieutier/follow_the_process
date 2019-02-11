@@ -3,8 +3,8 @@ import './Step.css';
 
 const Step = ({title, description}) => (
     <div className="Step">
-    <h1>{title}</h1>
-    <p>{description}</p>
+        <h1>{title}</h1>
+        <p>{description}</p>
     </div>
 )
 

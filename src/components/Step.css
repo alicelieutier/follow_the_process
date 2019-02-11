@@ -1,3 +1,8 @@
 .Step {
-    background-color: aqua;
+    background-color: white;
+    border: 1px #eee solid;
+    border-radius: 5px;
+    margin: 1em;
+    box-sizing: border-box;
+    padding: 1em;
 }
