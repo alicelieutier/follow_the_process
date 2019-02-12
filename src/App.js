@@ -3,48 +3,61 @@ import './App.css';
 
 import Step from './components/Step';
 
-const flow = [
-  {
-    title: 'Describe the problem 1',
+// these constants are stubs that will eventually be replaced by API calls
+const graph = {
+  a: {
+    title: 'Describe the problem',
     description: 'Write down words that relate to the problem.',
+    nextSteps: ['b', 'c']
   },
-  {
-    title: 'Describe the problem 2',
-    description: 'Write down words that relate to the problem.',
+  b: {
+    title: 'Google these words',
+    description: 'Enter these terms in google and read through the results.',
+    nextSteps: ['c']
   },
-  {
-    title: 'Describe the problem 3',
-    description: 'Write down words that relate to the problem.',
+  c: {
+    title: 'Draw a diagram of the system',
+    description: 'Use these words to diagram what you believe might be happening.',
+    nextSteps: []
   }
-]
+}
+
+const firstStepID = 'a'
+// end of stubs
 
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {currentStep: 0};
+    this.state = {
+      history: [firstStepID],
+    };
   }
 
-  next() {
-    if (this.state.currentStep < flow.length - 1) {
-      this.setState({currentStep: this.state.currentStep + 1})
-      return true;
-    }
-    return false;
+  getCurrentStep() {
+    return this.state.history.slice(-1)[0]
   }
 
   prev() {
-    if (this.state.currentStep > 0) {
-      this.setState({currentStep: this.state.currentStep - 1})
-      return true;
+    if (this.state.history.length <= 1) {
+      throw new Error(`No step to go back to`)
     }
-    return false;
+    const newHistory = this.state.history.slice(0,-1)
+    this.setState({history: newHistory})
+  }
+
+  chooseNext(nextID) {
+    if (!graph.hasOwnProperty(nextID)) {
+      throw new Error(`Trying to navigate to non-existent step id "${nextID}"`)
+    }
+    const newHistory = this.state.history.concat([nextID])
+    this.setState({history: newHistory})
   }
 
   render() {
     return (
       <div className="App">
         <div className="wrapper">
-        <Step {...flow[this.state.currentStep]} prev={() => this.prev()} next={() => this.next()} />
+        <Step {...graph[this.getCurrentStep()]} prev={() => this.prev()} next={(id) => this.chooseNext(id)} />
         </div>  
       </div>
     );
