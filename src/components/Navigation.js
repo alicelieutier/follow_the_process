@@ -1,12 +1,17 @@
 import React from 'react';
-// import './Navigation.css';
+import {shuffled} from '../helpers.js'
+import './Navigation.css';
 
 const Navigation = ({prev, next, nextSteps, canGoBack}) => (
     <div className="Navigation">
-        {canGoBack && (<button onClick={prev}>Previous</button>)} 
-        {nextSteps.map(({id, title}) => (
-            <button key={id} onClick={() => next(id)}>{title}</button>
-        ))}
+        <div className="back">
+            {canGoBack && (<button onClick={prev}>&larr; Back</button>)} 
+        </div>
+        <div className="forward">
+            {shuffled(nextSteps).map(({id, title}) => (
+                <button key={id} onClick={() => next(id)}>{title}</button>
+            ))}
+        </div>
     </div>
 )
 

@@ -1,0 +1,19 @@
+.Navigation {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.Navigation button {
+    font-size: 0.8em;
+    border: 1px solid #eee;
+    margin: 0.2em;
+    border-radius: 5px;
+    padding: 0.5em 1em;
+    background-color: #fafafa;
+}
+
+.Navigation .forward {
+    display: flex;
+    flex-direction: column;
+}
