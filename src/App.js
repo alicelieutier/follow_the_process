@@ -18,7 +18,7 @@ const graph = {
   c: {
     title: 'Draw a diagram of the system',
     description: 'Use these words to diagram what you believe might be happening.',
-    nextSteps: []
+    nextSteps: ['a']
   }
 }
 
@@ -63,6 +63,7 @@ class App extends Component {
       prev: () => this.prev(),
       next: (id) => this.chooseNext(id)
     }
+    const canGoBack = (this.state.history.length > 1)
     return (
       <div className="App">
         <div className="wrapper">
@@ -71,6 +72,7 @@ class App extends Component {
             navigation={{
               ...navigationFunctions,
               nextSteps,
+              canGoBack,
             }}
           />
         </div>  
