@@ -3,11 +3,11 @@ import './Step.css';
 
 import Navigation from './Navigation';
 
-const Step = ({title, description, nextSteps, prev, next}) => (
+const Step = ({title, description, navigation}) => (
     <div className="Step">
         <h1>{title}</h1>
         <p>{description}</p>
-        <Navigation {...{prev, next, nextSteps}} />
+        <Navigation {...navigation} />
     </div>
 )
 

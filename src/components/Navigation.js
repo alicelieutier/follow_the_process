@@ -5,8 +5,8 @@ const Navigation = ({prev, next, nextSteps}) => (
     <div className="Navigation">
         <button onClick={prev}>Previous</button>
         {
-            nextSteps.map((stepId) => (
-                <button key={stepId} onClick={() => next(stepId)}>{`Go to ${stepId}`}</button>
+            nextSteps.map(({id, title}) => (
+                <button key={id} onClick={() => next(id)}>{title}</button>
             ))
         }
     </div>

@@ -54,10 +54,25 @@ class App extends Component {
   }
 
   render() {
+    const currentStep = graph[this.getCurrentStep()];
+    const nextSteps = currentStep.nextSteps.map((stepID) => ({
+      id: stepID,
+      title: graph[stepID].title,
+    }))
+    const navigationFunctions = {
+      prev: () => this.prev(),
+      next: (id) => this.chooseNext(id)
+    }
     return (
       <div className="App">
         <div className="wrapper">
-        <Step {...graph[this.getCurrentStep()]} prev={() => this.prev()} next={(id) => this.chooseNext(id)} />
+          <Step
+            {...currentStep}
+            navigation={{
+              ...navigationFunctions,
+              nextSteps,
+            }}
+          />
         </div>  
       </div>
     );
