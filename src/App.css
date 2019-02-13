@@ -1,10 +1,21 @@
 .App {
-  text-align: center;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Raleway', sans-serif;
+  font-size: 18px;
+  line-height: 1.3em;
   min-height: 100vh;
   display: flex;
-  justify-content: space-between;
   flex-direction: column;
+}
+
+button {
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.8em;
+  border: 1px solid #eee;
+  margin: 0.2em;
+  border-radius: 5px;
+  padding: 0.6em 1em;
+  background-color: #fafafa;
+  cursor: pointer;
 }
 
 .App .wrapper {
@@ -13,4 +24,15 @@
   margin: 0 auto;
   display: flex;
   flex-direction: column;
+  flex: 1;
+}
+
+h1, h2 {
+  font-family: 'Lobster', cursive;
+  text-align: center;
+}
+
+em {
+  font-style: normal;
+  font-weight: bold;
 }

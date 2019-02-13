@@ -7,7 +7,7 @@
 .Footer ul {
     list-style: none;
     display: flex;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     justify-content: center;
 }
 
@@ -25,5 +25,6 @@
 }
 
 .Footer .copyright {
-    font-size: 0.5em;
+    font-size: 0.7em;
+    text-align: center;
 }
