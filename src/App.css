@@ -2,10 +2,14 @@
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;
   min-height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
 }
 
 .App .wrapper {
-  width: 800px;
+  width: 100%;
+  max-width: 800px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;

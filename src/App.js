@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 
 import Step from './components/Step';
+import Footer from './components/Footer';
 
 // these constants are stubs that will eventually be replaced by API calls
 const graph = {
@@ -75,7 +76,8 @@ class App extends Component {
               canGoBack,
             }}
           />
-        </div>  
+        </div> 
+        <Footer /> 
       </div>
     );
   }

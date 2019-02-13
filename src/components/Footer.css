@@ -1,0 +1,29 @@
+.Footer {
+    font-size: 0.8em;
+    background-color: white;
+    border: 1px solid #eee;
+}
+
+.Footer ul {
+    list-style: none;
+    display: flex;
+    text-transform: uppercase;
+    justify-content: center;
+}
+
+.Footer ul li {
+    padding: 0.5em;
+}
+
+.Footer a {
+    color: pink;
+    text-decoration: none;
+}
+
+.Footer a:visited {
+    color: pink;
+}
+
+.Footer .copyright {
+    font-size: 0.5em;
+}
