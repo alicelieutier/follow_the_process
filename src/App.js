@@ -3,6 +3,7 @@ import './App.css';
 
 import Step from './components/Step';
 import Footer from './components/Footer';
+import Header from './components/Header';
 
 // these constants are stubs that will eventually be replaced by API calls
 const graph = {
@@ -67,6 +68,7 @@ class App extends Component {
     const canGoBack = (this.state.history.length > 1)
     return (
       <div className="App">
+        <Header />
         <div className="wrapper">
           <Step
             {...currentStep}
