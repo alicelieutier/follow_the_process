@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import './Process.css';
+import './Process.css';
 
 import Step from './Step';
 

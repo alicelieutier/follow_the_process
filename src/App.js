@@ -59,9 +59,10 @@ const processes = [
 const App = () => (
   <div className="App">
     <Header />
-    <div className="wrapper">
-      {processes.map(({title, graph, firstStep}) => (
+    <div className="main">
+      {processes.map(({title, graph, firstStep}, index) => (
         <Process
+          key={`process_${index}`}
           title={title}
           graph={graph}
           firstStep={firstStep}
