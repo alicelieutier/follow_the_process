@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
 
-import Step from './components/Step';
-import Footer from './components/Footer';
-import Header from './components/Header';
+import Step from './processes/Step';
+import Footer from './footer/Footer';
+import Header from './header/Header';
 
 // these constants are stubs that will eventually be replaced by API calls
 const graph = {
